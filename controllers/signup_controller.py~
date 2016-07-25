@@ -1,0 +1,9 @@
+from flask import Flask, render_template
+
+def signup():
+	return render_template('signup.html')
+	
+def signup_complete():
+    _email = request.form['inputEmail']
+    _password = request.form['inputPassword']
+	return render_template('login.html')

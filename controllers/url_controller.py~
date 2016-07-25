@@ -4,8 +4,10 @@ import controllers.login_controller
 def url_label(label_name):
 	if "login" in label_name:
 		return  getattr(controllers.login_controller, label_name)()
+	if "signup" in label_name:
+		return getattr(controllers.signup_controller, label_name) ()
 	
 def url_post(label_name):
 	if "login" in label_name:
-		return getattr(controllers.login_controller, label_name())
+		return getattr(controllers.login_controller, label_name)()
 

@@ -1,8 +1,21 @@
-from flask import Flask, render_template
+from flask import Flask, render_template, request, redirect, session
+import models.user_model
+
+app = Flask(__name__)
+app.secret_key = 'A0Zr98j/3yX R~XHH!jmN]LWX/,?RT'
+
 
 def login():
 	return render_template('login.html')
 	
 def login_verify():
-	
-	return render_template('login.html')
+	_email = str(request.form['inputEmail'])
+	_password = str(request.form['inputPassword'])
+	user_id = models.user_model.get_user(_email, _password)
+	if user_id != "":
+		session['user_id'] = user_id
+		return redirect("/", code=302)
+	else :
+		return render_template('home.html')
+		
+

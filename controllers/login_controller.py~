@@ -5,3 +5,4 @@ def login():
 	
 def login_verify():
 	
+	return render_template('login.html')
