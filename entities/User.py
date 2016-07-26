@@ -1,7 +1,9 @@
 import models.user_model
+import entities.Player
 
 class User:
-	def __init__(self, name, email, password, points, budget):
+	def __init__(self, user_id, name, email, password, points, budget):
+		self.id = user_id
 		self.name = name
 		self.email = email
 		self.password = password
@@ -16,7 +18,7 @@ class User:
 		user_data = {}
 		user_data = models.user_model.fetch_details_by_id(user_id)
 		
-		return User(user_data['name'], user_data['email'], user_data['password'], user_data['points'], user_data['budget'])
+		return User(user_data['id'],user_data['name'], user_data['email'], user_data['password'], user_data['points'], user_data['budget'])
 
 	def add_user_points(self, added_points):
 		self.points += added_points
@@ -27,5 +29,19 @@ class User:
 	def increase_user_budget(self, budget_increment):
 		self.bubdget += budget_increment
 
+	def check_player_add(self, player ):
+		if(player.value > self.budget):
+			return 0
+		else:
+			return 1
 	
+	def add_player (self, player):
+		models.user_model.add_player(self.id, player.name)
+		self.decrease_user_budget(player.value)
+		return
+	
+	def remove_player(self, player):
+		models.user_model.remove_player(self.id,player.name )
+		self.increase_user_budget(self, player.value)
+		
 	

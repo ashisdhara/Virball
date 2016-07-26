@@ -1,0 +1,31 @@
+<html>
+	<head>
+		<title>
+				Add Player
+		</title>
+		 <link href="static/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Custom styles for this template -->
+		<link href="static/css/signin.css" rel="stylesheet">
+	</head>
+	<body>
+		<div>
+				Your Remaining Budget :
+		</div>
+		<div>
+		<form action="/team_add_submit" method="POST" >
+			<select name="player_name">
+				<optgroup label ="______">
+	  				{% for goalkeeper in goalkeepers %}
+			 		<option value= 
+			 		'{{ goalkeeper.name}}'>
+			 		{{ goalkeeper.name }} {{ goalkeeper.value }} </option>
+					{% endfor %}
+					
+					
+					</optgroup>
+		</select>
+		<button class="btn btn-lg btn-primary btn-block" type="submit">Add Player</button>
+		</form>
+		</div>
+	</body>
+</html>

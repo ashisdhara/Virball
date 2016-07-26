@@ -1,5 +1,6 @@
 from flask import Flask, render_template, request, jsonify
 import models.db_config
+import models.player_model
 
 def create_user(name, email, password):
 	con = models.db_config.create_connection()
@@ -39,5 +40,31 @@ def fetch_details_by_id(user_id):
 		user_data['budget'] = data[5]
 		return user_data
 		
+def add_player(user_id, player_name):
+	con = models.db_config.create_connection()
+	cursor = con.cursor()
+	raw_player = models.player_model.get_player_by_name(player_name)
+	player_id = raw_player[0]
+	query = "Insert into users_players (user_id, player_id) values ("+ str(user_id) +", '"+ str(player_id) +"');"
+	cursor.execute(query)
+	con.commit()
+	return 1
 
+def remove_player(user_id, player_name):
+	con = models.db_config.create_connection()
+	cursor = con.cursor()
+	raw_player = models.player_model.get_player_by_name(player_name)
+	player_id = raw_player[0]
+	query = "Delete from users_players where user_id="+ str(user_id)+" and player_id="+ str(player_id)+" ;"
+	cursor.execute(query)
+	con.commit()
+	return 1
+	
+def get_top_user_scores(count):
+	con = models.db_config.create_connection()
+	cursor = con.cursor()
+	query = "SELECT name, points from users order by points desc LIMIT "+ str(count) +";"
+	cursor.execute(query)
+	leaderboard_data = cursor.fetchall()
+	return leaderboard_data	
 	

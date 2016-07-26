@@ -1,4 +1,7 @@
-class Goalkeeper (Player):
+import models.player_model
+import entities.Player 
+
+class Goalkeeper (entities.Player.Player):
 	def __init__(self, name, value, goals, yellow, red, status, team, clean_sheets, games, score):
 		Player.__init__(self, name, value, goals, assists, yellow, red, status, team, games, score)		
 		self.clean_sheets = clean_sheets
@@ -8,6 +11,15 @@ class Goalkeeper (Player):
 
 	def fetch_player_by_id(self):
 		pass
+
+	@staticmethod	
+	def get_unselected_players(user_id):
+		raw_players = models.player_model.get_unselected_players(user_id, "gk")
+		user_unselected_players_list = []
+		for raw_player in raw_players:
+			user_unselected_players_list.append(entities.Player.Player(raw_player[1],raw_player[2], raw_player[3], raw_player[4], raw_player[5], raw_player[6], raw_player[7], raw_player[8], raw_player[9], raw_player[11],))
+		return user_unselected_players_list
+
 
 	def played_game(self):
 		self.score += 2

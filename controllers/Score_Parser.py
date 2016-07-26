@@ -1,5 +1,5 @@
 
-class Parser:
+class Score_Parser:
 	def __init__(self):
 		self.games = {}
 		self.date = {}
