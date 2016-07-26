@@ -1,0 +1,39 @@
+<html>
+	<head>
+		<title>
+				The Leaderboards
+		</title>
+		 <link href="static/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Custom styles for this template -->
+		<link href="static/css/signin.css" rel="stylesheet">
+	</head>
+	<body>
+		<div>
+				Your Remaining Budget : {% print user.budget %}
+		</div>
+		<div>
+			<ul class="nav nav-tabs">
+				<li class="active"><a data-toggle = "tab" href="#score"> Top Scorers </a> </li>
+				<li><a data-toggle = "tab" href="#value"> Top Value  </a> </li>
+				<li><a data-toggle = "tab" href="#players"> Top Players  </a> </li>
+			</ul>
+			
+			<div class= "tab-content">
+				<div id="score" class="tab-pane fade in active">
+					<h3>Top Users </h3>
+					The top users to be displayed here
+				</div>
+				
+				<div id="value" class="tab-pane fade in active">
+					<h3>Top Value Teams </h3>
+					The top valued teams to be displayed here
+				</div>
+				
+				<div id="players" class="tab-pane fade in active">
+					<h3>Top Footballers </h3>
+					The top football players (most points) to be displayed here
+				</div>
+			</div>
+		</div>
+	</body>
+</html>
