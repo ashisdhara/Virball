@@ -1,5 +1,6 @@
 from flask import Flask, render_template, request, redirect, session
 import models.user_model
+import entities.User
 
 app = Flask(__name__)
 app.secret_key = 'A0Zr98j/3yX R~XHH!jmN]LWX/,?RT'

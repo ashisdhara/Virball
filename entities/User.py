@@ -1,3 +1,5 @@
+import models.user_model
+
 class User:
 	def __init__(self, name, email, password, points, budget):
 		self.name = name
@@ -7,19 +9,23 @@ class User:
 		self.budget = budget
 	
 	def store_new_user(self):
-		pass
-	
-	def fetch_user_by_id(self, user_id):
-		pass
+		models.user_model.create_user(self.name, self.email, self.password)
+		
+	@staticmethod
+	def get_user_by_id(user_id):
+		user_data = {}
+		user_data = models.user_model.fetch_details_by_id(user_id)
+		
+		return User(user_data['name'], user_data['email'], user_data['password'], user_data['points'], user_data['budget'])
 
 	def add_user_points(self, added_points):
-		pass
+		self.points += added_points
 
 	def decrease_user_budget(self, budget_decrement):
-		pass
+		self.budget -= budget_decrement
 
 	def increase_user_budget(self, budget_increment):
-		pass
+		self.bubdget += budget_increment
 
 	
 	

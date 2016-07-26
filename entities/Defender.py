@@ -1,3 +1,5 @@
+
+
 class Defender (Player):
 	def __init__(self, name, value, goals, yellow, red, status, team, clean_sheets, games, score):
 		Player.__init__(self, name, value, goals, assists, yellow, red, status, team, games, score)		
@@ -8,7 +10,7 @@ class Defender (Player):
 
 	def fetch_player_by_id(self):
 		pass
-
+	
 	def played_game(self):
 		self.score += 2
 		self.games += 1

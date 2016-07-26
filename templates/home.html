@@ -7,8 +7,9 @@
 	<body>
 		Welcome to VirBall Fantasy Football.
 		
-		Your points : {% print entries['points'] %}
-		Your budget : {% print entries['budget'] %} 
+		Your points : {% print curr_user.points %}
+		Your budget : {% print curr_user.budget %} 
+		First Player : {% print user_players[0].name %}
 		<br>
 		<br>
 		

@@ -32,8 +32,9 @@ def fetch_details_by_id(user_id):
 	else:
 		user_data = {}
 		user_data['id'] = data[0]
-		user_data['name'] = data[1]
+		user_data['name'] = data[1]		
 		user_data['email'] = data[2]
+		user_data['password'] = data[3]
 		user_data['points'] = data[4]
 		user_data['budget'] = data[5]
 		return user_data

@@ -1,8 +1,10 @@
+import models.player_model
 
 class Player:
 	
-	def __init__(self, name, value, goals, yellow, red, status, team, games, score):
+	def __init__(self, name, position, value, team, status, goals, yellow, red, games, score):
 		self.name = name
+		self.position = position
 		self.value = value
 		self.goals = goals
 		self.yellow = yellow
@@ -17,6 +19,14 @@ class Player:
 
 	def fetch_player_by_id(self):
 		pass
+	
+	@staticmethod	
+	def get_players_by_user_id(user_id):
+		raw_players = models.player_model.get_players_by_user_id(user_id)
+		user_players_list = []
+		for raw_player in raw_players:
+			user_players_list.append(Player(raw_player[1],raw_player[2], raw_player[3], raw_player[4], raw_player[5], raw_player[6], raw_player[7], raw_player[8], raw_player[9], raw_player[11],))
+		return user_players_list
 
 	def played_game(self):
 		self.games += 1
