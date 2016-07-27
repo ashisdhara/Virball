@@ -8,4 +8,5 @@ def update():
 		controllers.Local_Score_Parser.Local_Score_Parser.fetch_games()
 		return render_template('update_success.html')
 	else :
-		return "Not Authorized to view this page"
+		error_message = "Not Authorized to access this page "
+		return render_template('error.html', error_message)

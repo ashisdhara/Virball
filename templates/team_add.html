@@ -4,7 +4,6 @@
 				Add Player
 		</title>
 		 <link href="static/css/bootstrap.min.css" rel="stylesheet">
-    <!-- Custom styles for this template -->
 		<link href="static/css/signin.css" rel="stylesheet">
 	</head>
 	<body>
@@ -19,14 +18,14 @@
 		<br>
 		<br>
 		<br>
-		<form action="/team_add_submit" method="POST" >
+		<form action="/team_add_submit" class="form-group" method="POST" >
 		<p align="center">
-			<select class="selectpicker" name="player_name">
+			<select class="form-control selectpicker" name="player_name">
 				<optgroup label ="______">
 	  				{% for goalkeeper in goalkeepers %}
 			 		<option value= 
 			 		'{{ goalkeeper.name}}'>
-			 		{{ goalkeeper.name }} {{ goalkeeper.value }} </option>
+			 		{{ goalkeeper.name }}                {{ goalkeeper.value }} </option>
 					{% endfor %}
 					
 					
@@ -38,6 +37,10 @@
 		<button class="btn btn-sm btn-primary " type="submit">Add Player</button>
 		</p>
 		</form>
+		<br>
+		<p align="center">
+		<a href="/" class="btn btn-primary" > Home</a>
+		</p>
 		</div>
 	</body>
 </html>

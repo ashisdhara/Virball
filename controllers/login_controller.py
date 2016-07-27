@@ -19,4 +19,6 @@ def login_verify():
 	else :
 		return render_template('home.html')
 		
-
+def login_logout():
+	session.pop('user_id', None)
+	return redirect("/", code=302)

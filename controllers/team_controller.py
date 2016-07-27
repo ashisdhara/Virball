@@ -31,12 +31,12 @@ def team_add_submit():
 		new_player = entities.Player.Player.get_player_by_name(_add_player_name)
 		addable = curr_user.check_player_add(new_player)
 		count = models.user_model.get_player_count(curr_user.id)
-		 
+		error_message = "Cannot Add the Player"
 		if addable != 0 and count<11:
 			curr_user.add_player(new_player)
 			return redirect("/team_add", code=302)
 		else :
-			return "Player Not Addable"
+			return render_template("error.html", error_message = error_message)
 
 def team_remove():
 	if session['user_id'] is not None :
@@ -55,5 +55,6 @@ def team_remove_submit():
 		curr_user.remove_player(new_player)
 		return redirect("/team_remove", code=302)
 	else :
-			return "Player Not Addable"
+		error_message = "Cannot Remove the Player"
+		return render_template("error.html", error_message = error_message)
 

@@ -1,7 +1,7 @@
 {
  "games":[
-         {"goals":["aguero", "iheanacho"],"assist":["nasri"], "yellow":["kompany"], "red":["sagna"], "clean_sheet":["kompany", "sagna", "clichy", "otamendi"]},
-         {"goals":["sagna"],"assist":["de bruyne"], "yellow":[], "red":[], "clean_sheet" : []}
+         {"goals":["Aguero", "Iheanacho"],"assist":["Nasri"], "yellow":["Kompany"], "red":["Sagna"], "clean_sheet":["Kompany", "Sagna", "Clichy", "Otamendi"]},
+         {"goals":["Sagna"],"assist":["De Bruyne"], "yellow":[], "red":[], "clean_sheet" : []}
         ]
 }
 

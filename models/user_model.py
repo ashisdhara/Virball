@@ -5,7 +5,7 @@ import models.player_model
 def create_user(name, email, password):
 	con = models.db_config.create_connection()
 	cursor = con.cursor()
-	query = "Insert into users (name, email, password, points, budget) values ('"+ name +"', '"+ email +"','"+ password+"',0,100);"
+	query = "Insert into users (name, email, password, points, budget) values ('"+ name +"', '"+ email +"','"+ password+"',0,70);"
 	cursor.execute(query)
 	con.commit()
 	return 1
