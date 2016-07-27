@@ -68,3 +68,27 @@ def get_top_user_scores(count):
 	leaderboard_data = cursor.fetchall()
 	return leaderboard_data	
 	
+def update_user_points(user_id, new_points):
+	con = models.db_config.create_connection()
+	cursor = con.cursor()
+	query = "update users set points = "+ str(new_points)+" where id = "+str(user_id)+";"
+	cursor.execute(query)
+	con.commit()
+	return 1
+
+def update_user_budget(user_id, new_budget):
+	con = models.db_config.create_connection()
+	cursor = con.cursor()
+	query = "update users set budget = "+ str(new_budget)+" where id = "+str(user_id)+";"
+	cursor.execute(query)
+	con.commit()
+	return 1
+
+def get_player_count(user_id):
+	con = models.db_config.create_connection()
+	cursor = con.cursor()
+	query = "SELECT count(*) from users_players where user_id =  "+ str(user_id)+";"
+	cursor.execute(query)
+	count = cursor.fetchone()
+	return int(count[0])	
+

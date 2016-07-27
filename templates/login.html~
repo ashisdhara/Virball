@@ -9,7 +9,7 @@
     <meta name="author" content="">
     <link rel="icon" href="../../favicon.ico">
 
-    <title>Signin Template for Bootstrap</title>
+    <title>Login Virball</title>
 
     <!-- Bootstrap core CSS -->
     <link href="static/css/bootstrap.min.css" rel="stylesheet">
@@ -24,21 +24,26 @@
       <form class="form-signin" method="POST" action = "login_verify">
         <h2 class="form-signin-heading">Please sign in</h2>
         <label for="inputEmail" class="sr-only">Email address</label>
-        <input type="email" id="inputEmail" class="form-control" placeholder="Email address" required autofocus>
+        <input type="email" name="inputEmail" id="inputEmail" class="form-control" placeholder="Email address" required autofocus>
         <label for="inputPassword" class="sr-only">Password</label>
-        <input type="password" id="inputPassword" class="form-control" placeholder="Password" required>
+        <input type="password" name ="inputPassword" id="inputPassword" class="form-control" placeholder="Password" required>
         
         </div>
-        <button class="btn btn-lg btn-primary btn-block" type="submit">Sign in</button>
+        <p align ="center">
+        <button class="btn btn-md btn-primary" type="submit">Sign in</button>
+        </p>
       </form>
 
     </div> <!-- /container -->
     
 	<br/>
 	<br/>
+	
+	<p align ="center">
 		<a href= "signup" class = "btn btn-danger btn-lg">
 			Sign Up
 		</a>
+		</p>
   </body>
 </html>
 

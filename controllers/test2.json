@@ -1,7 +1,7 @@
 {
  "games":[
-         {"goals":["aguero", "iheanacho"],"assist":"nasri"},
-         {"goals":["sagna"],"assist":[]}
+         {"goals":["aguero", "iheanacho"],"assist":"nasri", "yellow":["kompany"], "red":["sagna"]},
+         {"goals":["sagna"],"assist":["de bruyne"], "yellow":[], "red":[]}
         ]
 }
 

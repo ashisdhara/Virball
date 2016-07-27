@@ -17,7 +17,7 @@ class Goalkeeper (entities.Player.Player):
 		raw_players = models.player_model.get_unselected_players(user_id, "gk")
 		user_unselected_players_list = []
 		for raw_player in raw_players:
-			user_unselected_players_list.append(entities.Player.Player(raw_player[1],raw_player[2], raw_player[3], raw_player[4], raw_player[5], raw_player[6], raw_player[7], raw_player[8], raw_player[9], raw_player[11],))
+			user_unselected_players_list.append(entities.Player.Player(raw_player[1],raw_player[2], raw_player[3], raw_player[4], raw_player[5], raw_player[6], raw_player[7], raw_player[8], raw_player[9], raw_player[10], raw_player[11], raw_player[12]))
 		return user_unselected_players_list
 
 

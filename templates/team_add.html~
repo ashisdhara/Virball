@@ -16,9 +16,6 @@
 			</h3>
 		</div>
 		<div>
-		<br>
-		<br>
-		<br>
 		<form action="/team_add_submit" method="POST" >
 		<p align="center">
 			<select class="selectpicker" name="player_name">
@@ -34,9 +31,7 @@
 		</select>
 		</p>
 		<br><br>
-		<p align="center">
 		<button class="btn btn-sm btn-primary " type="submit">Add Player</button>
-		</p>
 		</form>
 		</div>
 	</body>

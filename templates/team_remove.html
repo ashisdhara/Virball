@@ -1,7 +1,7 @@
 <html>
 	<head>
 		<title>
-				Remove A Player
+				Remove Player
 		</title>
 		 <link href="static/css/bootstrap.min.css" rel="stylesheet">
     <!-- Custom styles for this template -->
@@ -9,14 +9,35 @@
 	</head>
 	<body>
 		<div>
-				Your Remaining Budget : {% print user.budget %}
+			<h3>
+			<p align= "center">
+				Your Remaining Budget : {{ curr_user.budget}}
+			</p>
+			</h3>
+
 		</div>
 		<div>
-			<form>
-				{% print "Players to be selected"%}
-				<button class="btn btn-lg btn-primary btn-block" type="submit">Select Player</button>
-			</form>
+		<br><br>
+		
+		<form action="/team_remove_submit" method="POST" >
+		<p align="center">
+			<select class="selectpicker" name="player_name">
+				<optgroup label ="______">
+	  				{% for player in players %}
+			 		<option value= 
+			 		'{{ player.name}}'>
+			 		{{ player.name }} {{ player.value }} </option>
+					{% endfor %}					
+					
+					</optgroup>
+		</select>
+		</p>
+		<br><br>
+		<p align="center">
+			<button class="btn btn-lg btn-primary" type="submit">Remove Player</button>
+		</p>
+		</form>
 		</div>
 	</body>
+	<script src="static/js/bootstrap.js"></script>
 </html>
-

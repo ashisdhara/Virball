@@ -54,3 +54,4 @@ class Defender (entities.Player.Player):
 	def changed_value(self, change_value):
 		self.value += change_value
 
+		

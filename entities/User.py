@@ -22,13 +22,16 @@ class User:
 
 	def add_user_points(self, added_points):
 		self.points += added_points
+		models.user_model.update_user_points(self.id, self.points)
 
 	def decrease_user_budget(self, budget_decrement):
 		self.budget -= budget_decrement
+		models.user_model.update_user_budget(self.id, self.budget)
 
 	def increase_user_budget(self, budget_increment):
-		self.bubdget += budget_increment
-
+		self.budget += budget_increment
+		models.user_model.update_user_budget(self.id, self.budget)
+		
 	def check_player_add(self, player ):
 		if(player.value > self.budget):
 			return 0
@@ -38,10 +41,12 @@ class User:
 	def add_player (self, player):
 		models.user_model.add_player(self.id, player.name)
 		self.decrease_user_budget(player.value)
+		models.user_model.update_user_budget(self.id, self.budget)
 		return
 	
 	def remove_player(self, player):
 		models.user_model.remove_player(self.id,player.name )
-		self.increase_user_budget(self, player.value)
+		self.increase_user_budget( player.value)
+		models.user_model.update_user_budget(self.id, self.budget)
 		
 	

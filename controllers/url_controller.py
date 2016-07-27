@@ -2,6 +2,8 @@ from flask import Flask, render_template, session,request
 import controllers.login_controller
 import controllers.signup_controller
 import controllers.team_controller
+import controllers.update_controller
+import controllers.leaderboard_controller
 import models.user_model
 import entities.User as user
 import entities.Player as player
@@ -16,6 +18,9 @@ def url_label(label_name):
 		return getattr(controllers.team_controller, label_name) ()
 	if "update" in label_name:
 		return getattr(controllers.update_controller, label_name)()
+	if "leaderboard" in label_name:
+		return getattr(controllers.leaderboard_controller, label_name)()
+		
 	
 def root_url():
 	if "user_id" in session:
